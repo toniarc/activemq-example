@@ -2,5 +2,9 @@
 # oc new <image-name>~<git-url>#branch 
 oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/toniarc/activemq-example.git#master 
 	--name=activemq-producer --context-dir=activemq-producer -e MAVEN_MIRROR_URL='http://nexus.corporativo.svc.cluster.local:8081/nexus/content/groups/public' --as-deployment-config=true
+	
+	
+oc new-app registry.access.redhat.com/ubi8/openjdk-11~https://github.com/toniarc/activemq-example.git#master 
+	--name=activemq-consumer --context-dir=activemq-consumer --env=[MAVEN_MIRROR_URL='http://nexus.corporativo.svc.cluster.local:8081/nexus/content/groups/public'] --as-deployment-config=true
 
 	

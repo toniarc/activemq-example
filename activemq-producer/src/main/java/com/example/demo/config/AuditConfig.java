@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 import br.com.voxdatati.auditlib.ActiveMQService;
 import br.com.voxdatati.auditlib.providers.ActionProvider;
 import br.com.voxdatati.auditlib.providers.NetworkProvider;
+import br.com.voxdatati.auditlib.providers.ProjectProvider;
 import br.com.voxdatati.auditlib.providers.UserProvider;
 
 @Component
@@ -146,6 +147,17 @@ public class AuditConfig {
             }
 
         };
+    }
+    
+    @Bean
+    public ProjectProvider projectProvider() {
+    	return new ProjectProvider() {
+			
+			@Override
+			public String chave() {
+				return "teste";
+			}
+		};
     }
 
 
